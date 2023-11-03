@@ -85,6 +85,19 @@ span {
   flex-direction: column; /* To stack elements vertically */
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
-  height: 100vh; /* 100% viewport height for full-page centering */
   text-align: center; /* Center text within the div */
+  padding-top: 100px;
+}
+
+.initial-weight-div{
+  margin: 10px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column; /* To stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    /* height: 100vh; */
+    text-align: center; /* Center text within the div */
 }

@@ -192,6 +192,12 @@ const App = () => {
 
     const initialCompArray = initialComposition.map(Number);
     const finalCompArray = finalComposition.map(Number);
+    const compositionsEqual = initialCompArray.every((value, index) => value === finalCompArray[index]);
+
+    if (compositionsEqual) {
+      setErrorMessage('Elements do not need to be added.');
+      return;
+    }
     const additions = calculateElementAdditions(parseFloat(initialWeight), initialCompArray, finalCompArray);
     setElementsToAdd(additions);
   };
@@ -262,7 +268,7 @@ const App = () => {
 
 
 
-
+<div>
   <div className='main-div'>
   <h1>Composition Adjustment Calculator</h1>
   {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
@@ -306,7 +312,7 @@ const App = () => {
       </tbody>
     </table>
 
-    <div>
+    <div className="initial-weight-div">
       <label>
         Initial Weight in grams:
         <input
@@ -314,6 +320,8 @@ const App = () => {
           step="0.001"
           value={initialWeight}
           onChange={(e) => setInitialWeight(e.target.value)}
+          min="0"
+          max="10000"
           required
         />
       </label>
@@ -321,8 +329,8 @@ const App = () => {
 
     <button type="submit">Calculate</button>
   </form>
-
-  {elementsToAdd.length > 0 && (
+  </div>
+  {/* {elementsToAdd.length > 0 && (
     <div>
       <h2>Amount to add for each element (in grams):</h2>
       <ul>
@@ -333,7 +341,22 @@ const App = () => {
         ))}
       </ul>
     </div>
-  )}
+  )} */}
+  <div className='results'>
+  {elementsToAdd.length > 0 && (
+  <div>
+    <h2>Amount to add for each element (in grams):</h2>
+    <ul style={{ listStyleType: 'none', padding: 0 }}>
+      {elementsToAdd.map((amount, index) => (
+        <li key={index} style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>{elements[index]}:</span>
+          <span>{amount} grams</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+</div>
 </div>
 
   );
