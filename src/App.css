@@ -80,6 +80,8 @@ label {
 span {
   margin-left: 0.5rem;
 } */
+
+
 .main-div {
   display: flex;
   flex-direction: column; /* To stack elements vertically */
@@ -100,4 +102,48 @@ span {
     justify-content: center; /* Center vertically */
     /* height: 100vh; */
     text-align: center; /* Center text within the div */
+}
+
+.text-color{
+  color: #FBFBFB;
+}
+
+.header-color{
+  color: #E4005B;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.custom-input{
+  background-color: #212121;
+  color: #FBFBFB;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+.custom-button {
+  color: #fdfdfd;
+  background-color: #E4005B;
+  border: none;
+  font-size: medium;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.custom-button:hover {
+  color: #e4005b;
+  background-color: #fdfdfd;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
 }
